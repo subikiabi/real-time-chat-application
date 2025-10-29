@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Realtime Chat</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h2>Join Chat</h2>
+      <input id="username" placeholder="Enter username" />
+      <input id="room" placeholder="Enter room (or 'global')" value="global" />
+      <button id="btnJoin">Join Room</button>
+
+      <h3>Online Users</h3>
+      <ul id="users"></ul>
+    </div>
+
+    <div class="right">
+      <div class="chatHeader">
+        <h2 id="currentRoom">Not in a room</h2>
+        <div>
+          <input id="privateTo" placeholder="Private to (username)" />
+          <button id="btnPrivate">Send Private Msg (will use message box)</button>
+        </div>
+      </div>
+
+      <div id="messages" class="messages"></div>
+
+      <div class="composer">
+        <input id="msgInput" placeholder="Type your message..." />
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/chat.js"></script>
+</body>
+</html>
